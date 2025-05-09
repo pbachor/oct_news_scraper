@@ -1,6 +1,6 @@
 csv_file/
 website_data/
 .idea/
-__pycache__
+__pycache__/
 *.env
 *.bat
