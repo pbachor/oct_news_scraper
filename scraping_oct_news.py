@@ -73,11 +73,6 @@ def get_website_data(website="https://octnews.org/all-articles/"):
     print(f" status = {website.status_code}")
     text_func = BeautifulSoup(website.text, 'html.parser')
 
-    # print(text.getText())
-
-    #text_cleaned = "\n".join(
-    #    line for line in text.getText().splitlines() if line.strip()
-    #)
     recent_posts_func = text_func.find('div', id='recent-posts-homepage')
     return text_func, recent_posts_func
 
@@ -122,7 +117,7 @@ def collecting_data(recent_p, keywords):
             href = link["href"]
             title = link.get("title", "")
             date = em.get_text(strip=True) if em else ""
-            text = div.get_text(separator=" ", strip=True)  # Gesamter Div-Text
+            text = div.get_text(separator=" ", strip=True)
             direct_text = ''.join(div.find_all(string=True, recursive=False)).strip()
 
             if href == "" or title == "":

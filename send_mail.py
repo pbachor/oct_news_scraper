@@ -10,7 +10,7 @@ class ConnectMail:
     """
     def __init__(self,reference_mail, info=False):
         # Loading the secret information from .env file
-        load_dotenv()  # Load from .env
+        load_dotenv()
         self.email_address = os.getenv("EMAIL_ADDRESS")
         self.email_password = os.getenv("EMAIL_PASSWORD")
         self.ref_mail = reference_mail
